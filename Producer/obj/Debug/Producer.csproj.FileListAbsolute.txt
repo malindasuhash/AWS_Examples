@@ -1,0 +1,10 @@
+C:\Git\My\AWS_Examples\Producer\bin\Debug\Producer.exe.config
+C:\Git\My\AWS_Examples\Producer\bin\Debug\Producer.exe
+C:\Git\My\AWS_Examples\Producer\bin\Debug\Producer.pdb
+C:\Git\My\AWS_Examples\Producer\bin\Debug\AWSSDK.Core.dll
+C:\Git\My\AWS_Examples\Producer\bin\Debug\AWSSDK.SQS.dll
+C:\Git\My\AWS_Examples\Producer\bin\Debug\AWSSDK.Core.xml
+C:\Git\My\AWS_Examples\Producer\bin\Debug\AWSSDK.SQS.xml
+C:\Git\My\AWS_Examples\Producer\obj\Debug\Producer.csprojResolveAssemblyReference.cache
+C:\Git\My\AWS_Examples\Producer\obj\Debug\Producer.exe
+C:\Git\My\AWS_Examples\Producer\obj\Debug\Producer.pdb
