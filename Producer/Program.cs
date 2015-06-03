@@ -17,17 +17,17 @@ namespace Producer
         {
             Console.WriteLine("Please wait....");
 
-            SendMessagesPlain(args[0]).Wait();
+            SendMessages(args[0]);
 
             Console.ReadKey();
         }
 
-        private static async Task SendMessagesPlain(string consumerName)
+        private static void SendMessages(string consumerName)
         {
             Amazon.SQS.AmazonSQSClient client = new Amazon.SQS.AmazonSQSClient();
+            client.Config.RegionEndpoint = Amazon.RegionEndpoint.EUWest1;
 
             var random = new Random(100);
-            var cancellationTokenSource = new CancellationTokenSource();
 
             for (var i = 0; i <= 100; i++)
             {
@@ -37,7 +37,7 @@ namespace Producer
                     MessageBody = string.Format("({2}) Number-[{0}-{1}]", DateTime.Now.Millisecond, random.Next(), consumerName)
                 };
 
-                await client.SendMessageAsync(message, cancellationTokenSource.Token);
+                client.SendMessage(message);
 
                 Console.WriteLine("Sending message - {0}", message.MessageBody);
             }

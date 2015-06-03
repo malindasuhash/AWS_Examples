@@ -39,6 +39,7 @@
       <HintPath>..\packages\AWSSDK.SQS.3.0.0.2-preview\lib\net45\AWSSDK.SQS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

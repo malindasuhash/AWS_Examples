@@ -8,3 +8,13 @@ C:\Git\My\AWS_Examples\Producer\bin\Debug\AWSSDK.SQS.xml
 C:\Git\My\AWS_Examples\Producer\obj\Debug\Producer.csprojResolveAssemblyReference.cache
 C:\Git\My\AWS_Examples\Producer\obj\Debug\Producer.exe
 C:\Git\My\AWS_Examples\Producer\obj\Debug\Producer.pdb
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\Producer.exe.config
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\obj\Debug\Producer.exe
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\obj\Debug\Producer.pdb
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\Producer.exe
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\Producer.pdb
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\AWSSDK.Core.dll
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\AWSSDK.SQS.dll
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\AWSSDK.Core.xml
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\bin\Debug\AWSSDK.SQS.xml
+C:\Users\malin_000\Documents\GitHub\AWS_Examples\Producer\obj\Debug\Producer.csprojResolveAssemblyReference.cache
