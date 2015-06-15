@@ -15,11 +15,13 @@ namespace Producer
             var waiter = new ConsoleWaiter();
             var sender = new MessageSender();
 
+            int sendDelayInMiliseconds = int.Parse(args[0]);
+
             Console.WriteLine("Starting ...");
 
             var token = new CancellationTokenSource();
 
-            Task.Factory.StartNew(() => sender.Send(token, waiter.Message), token.Token);
+            Task.Factory.StartNew(() => sender.Send(token, sendDelayInMiliseconds, waiter.Message), token.Token);
            
             Action terminateSender = () => { token.Cancel(); };
 

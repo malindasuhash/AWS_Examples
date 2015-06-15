@@ -6,7 +6,7 @@ namespace Producer
 {
     public class MessageSender
     {
-        public void Send(CancellationTokenSource cancellationToken, Action<string> updater)
+        public void Send(CancellationTokenSource cancellationToken, int sendDelay, Action<string> updater)
         {
             var client = new Amazon.SQS.AmazonSQSClient();
             client.Config.RegionEndpoint = Amazon.RegionEndpoint.EUWest1;
@@ -17,7 +17,7 @@ namespace Producer
 
             while (true)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(sendDelay);
 
                 var message = new Amazon.SQS.Model.SendMessageRequest()
                 {
