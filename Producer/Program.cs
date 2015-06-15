@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Examples.Core;
 
 namespace Producer
 {
@@ -15,34 +12,18 @@ namespace Producer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please wait....");
+            var waiter = new ConsoleWaiter();
+            var sender = new MessageSender();
 
-            SendMessages(args[0]);
+            Console.WriteLine("Starting ...");
 
-            Console.ReadKey();
-        }
+            var token = new CancellationTokenSource();
 
-        private static void SendMessages(string consumerName)
-        {
-            Amazon.SQS.AmazonSQSClient client = new Amazon.SQS.AmazonSQSClient();
-            client.Config.RegionEndpoint = Amazon.RegionEndpoint.EUWest1;
+            Task.Factory.StartNew(() => sender.Send(token, waiter.Message), token.Token);
+           
+            Action terminateSender = () => { token.Cancel(); };
 
-            var random = new Random(100);
-
-            for (var i = 0; i <= 100; i++)
-            {
-                var message = new Amazon.SQS.Model.SendMessageRequest()
-                {
-                    QueueUrl = ConfigurationManager.AppSettings["queueName"],
-                    MessageBody = string.Format("({2}) Number-[{0}-{1}]", DateTime.Now.Millisecond, random.Next(), consumerName)
-                };
-
-                client.SendMessage(message);
-
-                Console.WriteLine("Sending message - {0}", message.MessageBody);
-            }
-
-            Console.WriteLine("Done!");
+            waiter.WaitFor(ConsoleKey.X, terminateSender);
         }
     }
 }

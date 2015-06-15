@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sqs", "Sqs", "{F7E19C68-2D47-41DA-A1F1-9124D7078615}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "Producer\Producer.csproj", "{F0424FE3-DCDB-4297-92E7-CDEDAC705201}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqs-Consumer", "sqs-Consumer\sqs-Consumer.csproj", "{8B936474-35B1-47A1-B37A-F6F3EBB8F427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Core", "Examples.Core\Examples.Core.csproj", "{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{8B936474-35B1-47A1-B37A-F6F3EBB8F427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B936474-35B1-47A1-B37A-F6F3EBB8F427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B936474-35B1-47A1-B37A-F6F3EBB8F427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
