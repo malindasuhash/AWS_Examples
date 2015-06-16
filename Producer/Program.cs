@@ -23,7 +23,10 @@ namespace Producer
 
             Task.Factory.StartNew(() => sender.Send(token, sendDelayInMiliseconds, waiter.Message), token.Token);
            
-            Action terminateSender = () => { token.Cancel(); };
+            Action terminateSender = () =>
+            {
+                token.Cancel();
+            };
 
             waiter.WaitFor(ConsoleKey.X, terminateSender);
         }
