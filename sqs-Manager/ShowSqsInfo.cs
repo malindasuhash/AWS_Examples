@@ -29,6 +29,14 @@ namespace sqs_Manager
             {
                 Console.WriteLine("Queue url: {0}", urls);
             }
+
+            // Some attributes
+            var attrs = client.GetQueueAttributes(new GetQueueAttributesRequest(queueUrlResult.QueueUrl, new List<string>() {"All"}));
+
+            foreach (var attribute in attrs.Attributes)
+            {
+                Console.WriteLine("{0}: {1}", attribute.Key, attribute.Value);
+            }
         }
     }
 }
