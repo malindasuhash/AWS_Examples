@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqs-Consumer", "sqs-Consume
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Core", "Examples.Core\Examples.Core.csproj", "{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sns", "Sns", "{DE8938E7-5D76-4CAD-B95F-79D643088624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqs-Manager", "sqs-Manager\sqs-Manager.csproj", "{F5216B74-682A-4B70-9633-02ED6269D623}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95AADA9C-C0E9-4AD3-AFDF-A12B02A2FB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5216B74-682A-4B70-9633-02ED6269D623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5216B74-682A-4B70-9633-02ED6269D623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5216B74-682A-4B70-9633-02ED6269D623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5216B74-682A-4B70-9633-02ED6269D623}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F0424FE3-DCDB-4297-92E7-CDEDAC705201} = {F7E19C68-2D47-41DA-A1F1-9124D7078615}
 		{8B936474-35B1-47A1-B37A-F6F3EBB8F427} = {F7E19C68-2D47-41DA-A1F1-9124D7078615}
+		{F5216B74-682A-4B70-9633-02ED6269D623} = {F7E19C68-2D47-41DA-A1F1-9124D7078615}
 	EndGlobalSection
 EndGlobal
