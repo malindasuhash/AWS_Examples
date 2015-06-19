@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Examples.Core;
 
 namespace sqs_Consumer
 {
@@ -11,50 +11,24 @@ namespace sqs_Consumer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting receiving from queue");
-            ReadFromQueue();
-            Console.WriteLine("End receiving from queue");
-            Console.ReadKey();
-        }
 
-        private static void ReadFromQueue()
-        {
-            var maxAttemptsBeforeCompleting = 5;
+            var waiter = new ConsoleWaiter();
+            var receiver = new MessageReceiver();
 
-            var queueUrl = ConfigurationManager.AppSettings["queueName"];
+            int delayBetweenReceiveCalls = int.Parse(args[0]);
 
-            var client = new Amazon.SQS.AmazonSQSClient();
-            var receiveRequest = new Amazon.SQS.Model.ReceiveMessageRequest(queueUrl);
+            Console.WriteLine("Starting ...");
 
-            var attempt = 1;
-            do
+            var token = new CancellationTokenSource();
+
+            Task.Factory.StartNew(() => receiver.Read(token, delayBetweenReceiveCalls), token.Token);
+
+            Action terminateSender = () =>
             {
-                var response = client.ReceiveMessage(receiveRequest);
+                token.Cancel();
+            };
 
-                // check for messages
-                var hasMessage = response.Messages.Count() == 1;
-
-                if (hasMessage)
-                {
-                    // Process message
-                    var message = response.Messages[0];
-                    Console.Write("Message received: {0}", message.Body);
-                    
-                    // Send complete
-                    var delete = new Amazon.SQS.Model.DeleteMessageRequest(queueUrl, message.ReceiptHandle);
-                    var deleteResponse = client.DeleteMessage(delete);
-
-                    if (deleteResponse.HttpStatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        Console.WriteLine(" [Message Processing complete]");
-                    }
-
-                    continue;
-                }
-
-                attempt++;
-            }
-            while (attempt <= maxAttemptsBeforeCompleting);
+            waiter.WaitFor(ConsoleKey.Y, terminateSender);
         }
     }
 }
